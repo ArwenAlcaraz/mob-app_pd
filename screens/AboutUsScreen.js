@@ -15,27 +15,7 @@ const AboutUsScreen = () => {
         <Text style={[styles.getStarted1, styles.getTypo]}>Get Started</Text>
       </View>
       <View style={[styles.aboutUsScreenChild, styles.aboutChildPosition]} />
-      <Text style={[styles.about, styles.teamTypo]}>ABOUT</Text>
-      <Image
-        style={[styles.more3Icon, styles.iconLayout]}
-        contentFit="cover"
-        source={require("../assets/more-3.png")}
-      />
-      <Image
-        style={[styles.vectorIcon, styles.iconLayout]}
-        contentFit="cover"
-        source={require("../assets/vector.png")}
-      />
-      <Image
-        style={[styles.vectorIcon1, styles.textPosition]}
-        contentFit="cover"
-        source={require("../assets/vector1.png")}
-      />
-      <Image
-        style={[styles.vectorIcon2, styles.vectorIconLayout]}
-        contentFit="cover"
-        source={require("../assets/vector2.png")}
-      />
+      <Text style={[styles.information, styles.teamTypo]}>INFORMATION</Text>
       <Pressable
         style={[styles.rectangleParent, styles.rectangleGroupPosition]}
         onPress={() => navigation.navigate("AboutUsScreenTeam")}
@@ -95,25 +75,25 @@ const AboutUsScreen = () => {
         source={require("../assets/user-1.png")}
       />
       <Image
-        style={[styles.expert1Icon, styles.iconPosition2]}
+        style={[styles.expert1Icon, styles.iconPosition1]}
         contentFit="cover"
         source={require("../assets/expert-1.png")}
       />
       <Image
-        style={[styles.pcbBoard1Icon, styles.iconPosition2]}
+        style={[styles.pcbBoard1Icon, styles.iconPosition1]}
         contentFit="cover"
         source={require("../assets/pcbboard-1.png")}
       />
       <View style={[styles.aboutUsScreenChild2, styles.aboutChildPosition]} />
       <Image
-        style={[styles.homeIcon, styles.iconPosition1]}
+        style={[styles.homeIcon, styles.iconLayout]}
         contentFit="cover"
         source={require("../assets/home.png")}
       />
       <Image
-        style={[styles.vectorIcon3, styles.iconPosition1]}
+        style={[styles.vectorIcon, styles.iconLayout]}
         contentFit="cover"
-        source={require("../assets/vector3.png")}
+        source={require("../assets/vector.png")}
       />
       <Image
         style={[styles.taskIcon, styles.iconPosition]}
@@ -124,6 +104,11 @@ const AboutUsScreen = () => {
         style={[styles.controlIcon, styles.iconPosition]}
         contentFit="cover"
         source={require("../assets/control.png")}
+      />
+      <Image
+        style={[styles.vectorIcon1, styles.iconLayout]}
+        contentFit="cover"
+        source={require("../assets/vector7.png")}
       />
     </View>
   );
@@ -153,23 +138,8 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontFamily: FontFamily.poppinsSemiBold,
     fontWeight: "600",
+    fontHeight: "800",
     position: "absolute",
-  },
-  iconLayout: {
-    maxHeight: "100%",
-    maxWidth: "100%",
-    position: "absolute",
-    overflow: "hidden",
-  },
-  textPosition: {
-    top: "2.19%",
-    position: "absolute",
-  },
-  vectorIconLayout: {
-    width: "5.56%",
-    maxHeight: "100%",
-    maxWidth: "100%",
-    overflow: "hidden",
   },
   rectangleGroupPosition: {
     left: "33.33%",
@@ -184,13 +154,12 @@ const styles = StyleSheet.create({
     left: 50,
     position: "absolute",
   },
-  iconPosition2: {
+  iconPosition1: {
     width: 40,
     left: 60,
     position: "absolute",
   },
-  iconPosition1: {
-    top: "90.94%",
+  iconLayout: {
     maxHeight: "100%",
     maxWidth: "100%",
     position: "absolute",
@@ -204,15 +173,20 @@ const styles = StyleSheet.create({
     overflow: "hidden",
   },
   buttonChild: {
-    borderRadius: Border.br_4xs,
-    backgroundColor: "#132a17",
-    left: "0%",
-    bottom: "0%",
-    right: "0%",
-    top: "0%",
-    height: "100%",
-    position: "absolute",
-    width: "100%",
+  borderRadius: Border.br_4xs,
+  backgroundColor: Color.colorDarkslategray,
+  left: "0%",
+  bottom: "0%",
+  right: "0%",
+  top: "0%",
+  height: "100%",
+  position: "absolute",
+  width: "100%",
+  shadowColor: "#000",
+  shadowOffset: { width: 9, height: 7 }, 
+  shadowOpacity: 0.6, 
+  shadowRadius: 7, 
+  elevation: 11,
   },
   getStarted: {
     color: Color.colorBlack,
@@ -243,28 +217,12 @@ const styles = StyleSheet.create({
     bottom: "87.66%",
     backgroundColor: Color.colorAntiquewhite,
   },
-  about: {
+  information: {
     height: "4.53%",
-    width: "25.28%",
-    top: "5.78%",
-    left: "37.5%",
-    fontSize: FontSize.size_lgi,
-    color: Color.colorBlack,
-  },
-  more3Icon: {
-    height: "3.75%",
-    width: "6.67%",
-    top: "6.25%",
-    right: "85.83%",
-    bottom: "90%",
-    left: "7.5%",
-  },
-  text: {
-    left: "6.67%",
-    fontSize: FontSize.size_sm,
-    fontWeight: "700",
-    fontFamily: FontFamily.poppinsBold,
-    textAlign: "left",
+    width: "80%",
+    top: "7.25%",
+    left: "12%",
+    fontSize: 25,
     color: Color.colorBlack,
   },
   groupPosition: {
@@ -286,11 +244,11 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   team: {
-    height: "35.42%",
+    height: "57.42%",
     width: "89.42%",
     top: "14.58%",
     left: "7.41%",
-    fontSize: FontSize.size_2xl,
+    fontSize: 27,
     color: Color.colorWhite,
   },
   rectangleParent: {
@@ -315,37 +273,37 @@ const styles = StyleSheet.create({
     bottom: "26.09%",
   },
   aboutUsScreenItem: {
-    top: 200,
+    top: 224,
   },
   aboutUsScreenInner: {
-    top: 297,
+    top: 325,
   },
   ellipseIcon: {
-    top: 400,
+    top: 425,
   },
   aboutUsScreenChild1: {
-    top: 495,
+    top: 521,
   },
   groupChat1Icon: {
-    top: 200,
+    top: 225,
     left: 53,
     width: 54,
     height: 58,
     position: "absolute",
   },
   user1Icon: {
-    top: 300,
+    top: 329,
     left: 55,
     width: 50,
     height: 50,
     position: "absolute",
   },
   expert1Icon: {
-    top: 400,
+    top: 434,
     height: 43,
   },
   pcbBoard1Icon: {
-    top: 500,
+    top: 531,
     height: 38,
   },
   aboutUsScreenChild2: {
@@ -356,17 +314,23 @@ const styles = StyleSheet.create({
   },
   homeIcon: {
     height: "5.31%",
-    width: "10%",
+    width: "12%",
     right: "82.78%",
     bottom: "3.75%",
     left: "7.22%",
+    top: "90.94%",
+    maxHeight: "100%",
+    maxWidth: "100%",
   },
-  vectorIcon3: {
+  vectorIcon: {
     height: "4.22%",
-    width: "10.83%",
-    right: "6.11%",
+    width: "13.83%",
+    right: "4.11%",
     bottom: "4.84%",
-    left: "83.06%",
+    left: "81.06%",
+    top: "90.94%",
+    maxHeight: "100%",
+    maxWidth: "100%",
   },
   taskIcon: {
     height: "4.84%",
@@ -377,10 +341,18 @@ const styles = StyleSheet.create({
   },
   controlIcon: {
     height: "5%",
-    width: "10.28%",
+    width: "11.28%",
     right: "33.33%",
     bottom: "4.38%",
     left: "56.39%",
+  },
+  vectorIcon1: {
+    height: "3.27%",
+    width: "6.83%",
+    top: "7.38%",
+    right: "88.47%",
+    bottom: "89.66%",
+    left: "7%",
   },
   aboutUsScreen: {
     backgroundColor: Color.colorMediumseagreen,
