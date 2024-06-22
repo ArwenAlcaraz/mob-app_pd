@@ -1,8 +1,8 @@
 import * as React from "react";
-import { StyleSheet, View, Text, Pressable } from "react-native";
+import { StyleSheet, View, Text, TouchableOpacity, Pressable} from "react-native";
 import { Image } from "expo-image";
 import { useNavigation } from "@react-navigation/native";
-import { Border, FontFamily, Color, FontSize } from "../GlobalStyles";
+import { Border, Color, FontFamily, FontSize } from "../GlobalStyles";
 
 const AboutUsScreenExpert = () => {
   const navigation = useNavigation();
@@ -12,24 +12,14 @@ const AboutUsScreenExpert = () => {
       <View style={[styles.aboutUsScreenExpertChild, styles.aboutPosition]} />
       <Text style={[styles.expert, styles.expertTypo]}>EXPERT</Text>
       <Image
-        style={[styles.more6Icon, styles.iconLayout1]}
+        style={[styles.vectorIcon1, styles.vectorIconLayout1]}
         contentFit="cover"
-        source={require("../assets/more-3.png")}
+        source={require("../assets/vector4.png")}
       />
       <Image
-        style={[styles.vectorIcon, styles.iconLayout1]}
+        style={[styles.vectorIcon2, styles.vectorIconLayout1]}
         contentFit="cover"
-        source={require("../assets/vector.png")}
-      />
-      <Image
-        style={[styles.vectorIcon1, styles.textPosition]}
-        contentFit="cover"
-        source={require("../assets/vector1.png")}
-      />
-      <Image
-        style={[styles.vectorIcon2, styles.vectorIconLayout2]}
-        contentFit="cover"
-        source={require("../assets/vector2.png")}
+        source={require("../assets/vector4.png")}
       />
       <Image
         style={[styles.vectorIcon3, styles.vectorIconLayout1]}
@@ -42,33 +32,18 @@ const AboutUsScreenExpert = () => {
         source={require("../assets/vector4.png")}
       />
       <Image
-        style={[styles.vectorIcon5, styles.vectorIconLayout1]}
-        contentFit="cover"
-        source={require("../assets/vector4.png")}
-      />
-      <Image
-        style={[styles.vectorIcon6, styles.vectorIconLayout1]}
-        contentFit="cover"
-        source={require("../assets/vector4.png")}
-      />
-      <Image
-        style={[styles.vectorIcon7, styles.vectorIconLayout1]}
-        contentFit="cover"
-        source={require("../assets/vector4.png")}
-      />
-      <Image
-        style={[styles.vectorIcon8, styles.vectorIconLayout]}
+        style={[styles.vectorIcon5, styles.vectorIconLayout]}
         contentFit="cover"
         source={require("../assets/vector5.png")}
       />
       <Image
-        style={[styles.vectorIcon9, styles.vectorIconLayout]}
+        style={[styles.vectorIcon6, styles.vectorIconLayout]}
         contentFit="cover"
         source={require("../assets/vector6.png")}
       />
       <View style={styles.button}>
         <Image
-          style={[styles.buttonChild, styles.iconLayout]}
+          style={[styles.buttonChild, styles.vectorIconLayout1]}
           contentFit="cover"
           source={require("../assets/rectangle-12.png")}
         />
@@ -79,20 +54,25 @@ const AboutUsScreenExpert = () => {
       </View>
       <View style={[styles.aboutUsScreenExpertItem, styles.aboutPosition]} />
       <Image
-        style={[styles.homeIcon, styles.vectorPosition]}
+        style={[styles.homeIcon, styles.iconPosition1]}
         contentFit="cover"
         source={require("../assets/home.png")}
       />
       <Pressable
-        style={[styles.vector, styles.vectorPosition]}
+        style={styles.vectorIconPNG}
         onPress={() => navigation.navigate("AboutUsScreen")}
       >
         <Image
-          style={styles.iconLayout}
+          style={styles.vectorIconPNG}
           contentFit="cover"
-          source={require("../assets/vector3.png")}
+          source={require("../assets/vector7.png")}
         />
       </Pressable>
+      <Image
+        style={[styles.vectorIcon7, styles.iconPosition1]}
+        contentFit="cover"
+        source={require("../assets/vector.png")}
+      />
       <Image
         style={[styles.taskIcon, styles.iconPosition]}
         contentFit="cover"
@@ -103,7 +83,7 @@ const AboutUsScreenExpert = () => {
         contentFit="cover"
         source={require("../assets/control1.png")}
       />
-      <Text style={[styles.weAreCollaborating, styles.getStarted1Typo]}>
+      <Text style={[styles.weAreCollaborating, styles.vectorIcon8Position]}>
         We are collaborating with Mr. Daryl Hernandez, an entomologist with 12
         years of experience in urban pest management, agriculture, and the
         pesticide industry. Mr. Hernandez is a key expert from Raidex Solutions
@@ -111,6 +91,16 @@ const AboutUsScreenExpert = () => {
         extensive knowledge and practical expertise in managing agricultural
         pests provide a solid foundation for our research efforts.
       </Text>
+      <TouchableOpacity
+        style={[styles.vectorIcon8, styles.vectorIcon8Position]}
+        onPress={() => navigation.navigate("AboutUsScreen")}
+      >
+        <Image
+          style={styles.vectorIconLayout1}
+          contentFit="cover"
+          source={require("../assets/vector7.png")}
+        />
+      </TouchableOpacity>
     </View>
   );
 };
@@ -125,34 +115,13 @@ const styles = StyleSheet.create({
   },
   expertTypo: {
     textAlign: "center",
+    color: Color.colorBlack,
     fontFamily: FontFamily.poppinsSemiBold,
     fontWeight: "600",
-    color: Color.colorBlack,
-    position: "absolute",
-  },
-  iconLayout1: {
-    maxHeight: "100%",
-    maxWidth: "100%",
-    overflow: "hidden",
-  },
-  textPosition: {
-    top: "2.19%",
-    position: "absolute",
-  },
-  vectorIconLayout2: {
-    width: "5.56%",
-    maxHeight: "100%",
-    maxWidth: "100%",
-    overflow: "hidden",
   },
   vectorIconLayout1: {
-    bottom: "50.47%",
-    top: "48.59%",
-    width: "1.67%",
-    height: "0.94%",
     maxHeight: "100%",
     maxWidth: "100%",
-    position: "absolute",
     overflow: "hidden",
   },
   vectorIconLayout: {
@@ -165,13 +134,6 @@ const styles = StyleSheet.create({
     position: "absolute",
     overflow: "hidden",
   },
-  iconLayout: {
-    height: "100%",
-    maxHeight: "100%",
-    maxWidth: "100%",
-    overflow: "hidden",
-    width: "100%",
-  },
   getPosition: {
     display: "none",
     fontSize: FontSize.size_lg,
@@ -179,17 +141,20 @@ const styles = StyleSheet.create({
     top: "26.14%",
     width: "60.38%",
     height: "49.24%",
+    position: "absolute",
   },
   getStarted1Typo: {
     color: Color.colorSnow,
     textAlign: "center",
     fontFamily: FontFamily.poppinsSemiBold,
     fontWeight: "600",
-    position: "absolute",
   },
-  vectorPosition: {
+  iconPosition1: {
     top: "91.09%",
+    maxHeight: "100%",
+    maxWidth: "100%",
     position: "absolute",
+    overflow: "hidden",
   },
   iconPosition: {
     top: "90.78%",
@@ -197,6 +162,10 @@ const styles = StyleSheet.create({
     maxWidth: "100%",
     position: "absolute",
     overflow: "hidden",
+  },
+  vectorIcon8Position: {
+    left: "3.89%",
+    position: "absolute",
   },
   aboutUsScreenExpertChild: {
     height: "15.78%",
@@ -206,72 +175,102 @@ const styles = StyleSheet.create({
   },
   expert: {
     height: "4.53%",
-    width: "25.28%",
-    top: "6.25%",
-    left: "38.33%",
-    fontSize: FontSize.size_lgi,
-  },
-  more6Icon: {
-    height: "3.75%",
-    width: "6.67%",
-    top: "6.56%",
-    right: "85.83%",
-    bottom: "89.69%",
-    left: "7.5%",
+    width: "29.28%",
+    top: "7.25%",
+    left: "36.33%",
+    fontSize: 28,
     position: "absolute",
   },
-  text: {
-    left: "6.67%",
-    fontSize: FontSize.size_sm,
-    fontWeight: "700",
-    fontFamily: FontFamily.poppinsBold,
-    textAlign: "left",
-    color: Color.colorBlack,
-    top: "2.19%",
-  },
-  vectorIcon3: {
+  vectorIcon: {
     right: "53.89%",
     left: "44.44%",
+    bottom: "50.47%",
+    top: "48.59%",
+    width: "1.67%",
+    height: "0.94%",
+    maxHeight: "100%",
+    maxWidth: "100%",
+    position: "absolute",
   },
-  vectorIcon4: {
+  vectorIconPNG: {
+    height: "15.47%",
+    width: "25.53%",
+    top: "7.28%",
+    right: "86.81%",
+    bottom: "93.25%",
+    left: "3.67%",
+    position: "absolute",
+    overflow: "hidden"
+  },
+  vectorIcon1: {
     right: "51.11%",
     left: "47.22%",
+    bottom: "50.47%",
+    top: "48.59%",
+    width: "1.67%",
+    height: "0.94%",
+    maxHeight: "100%",
+    maxWidth: "100%",
+    position: "absolute",
   },
-  vectorIcon5: {
+  vectorIcon2: {
     right: "48.33%",
     left: "50%",
+    bottom: "50.47%",
+    top: "48.59%",
+    width: "1.67%",
+    height: "0.94%",
+    maxHeight: "100%",
+    maxWidth: "100%",
+    position: "absolute",
   },
-  vectorIcon6: {
+  vectorIcon3: {
     right: "45.56%",
     left: "52.78%",
+    bottom: "50.47%",
+    top: "48.59%",
+    width: "1.67%",
+    height: "0.94%",
+    maxHeight: "100%",
+    maxWidth: "100%",
+    position: "absolute",
   },
-  vectorIcon7: {
+  vectorIcon4: {
     right: "42.78%",
     left: "55.56%",
+    bottom: "50.47%",
+    top: "48.59%",
+    width: "1.67%",
+    height: "0.94%",
+    maxHeight: "100%",
+    maxWidth: "100%",
+    position: "absolute",
   },
-  vectorIcon8: {
+  vectorIcon5: {
     right: "10.28%",
     left: "87.5%",
   },
-  vectorIcon9: {
+  vectorIcon6: {
     right: "85.56%",
     left: "12.22%",
   },
   buttonChild: {
+    height: "100%",
     top: "0%",
     bottom: "0%",
     borderRadius: Border.br_4xs,
     left: "0%",
     right: "0%",
-    height: "100%",
+    maxHeight: "100%",
+    maxWidth: "100%",
     position: "absolute",
+    width: "100%",
   },
   getStarted: {
     textAlign: "center",
+    color: Color.colorBlack,
     fontFamily: FontFamily.poppinsSemiBold,
     fontWeight: "600",
-    color: Color.colorBlack,
-    position: "absolute",
   },
   getStarted1: {
     display: "none",
@@ -280,6 +279,7 @@ const styles = StyleSheet.create({
     top: "26.14%",
     width: "60.38%",
     height: "49.24%",
+    position: "absolute",
   },
   button: {
     height: "30.78%",
@@ -306,20 +306,17 @@ const styles = StyleSheet.create({
   },
   homeIcon: {
     height: "5.31%",
-    width: "10%",
+    width: "11%",
     right: "82.78%",
     bottom: "3.59%",
     left: "7.22%",
-    maxHeight: "100%",
-    maxWidth: "100%",
-    overflow: "hidden",
   },
-  vector: {
-    left: "83.06%",
+  vectorIcon7: {
+    height: "4.22%",
+    width: "13.83%",
     right: "6.11%",
     bottom: "4.69%",
-    width: "10.83%",
-    height: "4.22%",
+    left: "80.06%",
   },
   taskIcon: {
     height: "4.84%",
@@ -330,7 +327,7 @@ const styles = StyleSheet.create({
   },
   controlIcon: {
     height: "5%",
-    width: "10.28%",
+    width: "11.28%",
     right: "33.33%",
     bottom: "4.22%",
     left: "56.39%",
@@ -339,8 +336,21 @@ const styles = StyleSheet.create({
     height: "37.5%",
     width: "90%",
     top: "50.63%",
-    left: "3.89%",
-    fontSize: FontSize.size_smi,
+    fontSize: 15,
+    color: Color.colorSnow,
+    textAlign: "center",
+    fontFamily: FontFamily.poppinsSemiBold,
+    fontWeight: "600",
+  },
+  vectorIcon8: {
+    height: "3.47%",
+    width: "6.53%",
+    top: "6.88%",
+    right: "89.58%",
+    bottom: "89.66%",
+    maxHeight: "100%",
+    maxWidth: "100%",
+    overflow: "hidden",
   },
   aboutUsScreenExpert: {
     backgroundColor: Color.colorMediumseagreen,
