@@ -3,6 +3,7 @@ import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { useFonts } from "expo-font";
 import AboutUsScreen from "./screens/AboutUsScreen";
+import Email from "./components/Email";
 import AboutUsScreenTeam from "./screens/AboutUsScreenTeam";
 import AboutUsScreenClient from "./screens/AboutUsScreenClient";
 import AboutUsScreenExpert from "./screens/AboutUsScreenExpert";
@@ -10,13 +11,14 @@ import AboutUsScreenDevice from "./screens/AboutUsScreenDevice";
 
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { View, Text, Pressable, TouchableOpacity } from "react-native";
+import Pinchable from 'react-native-pinchable';
 
 const App = () => {
   const [hideSplashScreen, setHideSplashScreen] = React.useState(true);
 
   const [fontsLoaded, error] = useFonts({
     "Poppins-SemiBold": require("./assets/fonts/Poppins-SemiBold.ttf"),
-    "Poppins-Bold": require("./assets/fonts/Poppins-Bold.ttf"),
+    "Poppins-ExtraBold": require("./assets/fonts/Poppins-ExtraBold.ttf"),
   });
 
   if (!fontsLoaded && !error) {
