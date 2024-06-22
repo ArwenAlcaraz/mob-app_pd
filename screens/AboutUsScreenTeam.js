@@ -1,39 +1,19 @@
 import * as React from "react";
-import { StyleSheet, View, Text, Pressable } from "react-native";
-import { Image } from "expo-image";
+import { StyleSheet, Text, View, Pressable, TouchableOpacity} from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import { Border, FontFamily, Color, FontSize } from "../GlobalStyles";
+import { Image } from "expo-image";
+import { Border, Color, FontFamily, FontSize } from "../GlobalStyles";
 
 const AboutUsScreenTeam = () => {
   const navigation = useNavigation();
 
   return (
     <View style={styles.aboutUsScreenTeam}>
-      <View style={[styles.aboutUsScreenTeamChild, styles.aboutPosition]} />
+      <View style={[styles.aboutUsScreenTeamChild, styles.aboutLayout]} />
       <Text style={[styles.team, styles.teamTypo]}>TEAM</Text>
-      <Image
-        style={[styles.more4Icon, styles.iconLayout1]}
-        contentFit="cover"
-        source={require("../assets/more-3.png")}
-      />
-      <Image
-        style={[styles.vectorIcon, styles.iconLayout1]}
-        contentFit="cover"
-        source={require("../assets/vector.png")}
-      />
-      <Image
-        style={[styles.vectorIcon1, styles.textPosition]}
-        contentFit="cover"
-        source={require("../assets/vector1.png")}
-      />
-      <Image
-        style={[styles.vectorIcon2, styles.vectorIconLayout1]}
-        contentFit="cover"
-        source={require("../assets/vector2.png")}
-      />
       <View style={styles.button}>
         <Image
-          style={[styles.buttonChild, styles.iconLayout]}
+          style={[styles.buttonChild, styles.buttonChildLayout]}
           contentFit="cover"
           source={require("../assets/rectangle-1.png")}
         />
@@ -51,6 +31,16 @@ const AboutUsScreenTeam = () => {
         excellence and make a significant impact in our field.
       </Text>
       <Image
+        style={[styles.vectorIcon1, styles.vectorIconLayout]}
+        contentFit="cover"
+        source={require("../assets/vector4.png")}
+      />
+      <Image
+        style={[styles.vectorIcon2, styles.vectorIconLayout]}
+        contentFit="cover"
+        source={require("../assets/vector4.png")}
+      />
+      <Image
         style={[styles.vectorIcon3, styles.vectorIconLayout]}
         contentFit="cover"
         source={require("../assets/vector4.png")}
@@ -60,35 +50,20 @@ const AboutUsScreenTeam = () => {
         contentFit="cover"
         source={require("../assets/vector4.png")}
       />
+      <View style={[styles.aboutUsScreenTeamItem, styles.aboutLayout]} />
       <Image
-        style={[styles.vectorIcon5, styles.vectorIconLayout]}
-        contentFit="cover"
-        source={require("../assets/vector4.png")}
-      />
-      <Image
-        style={[styles.vectorIcon6, styles.vectorIconLayout]}
-        contentFit="cover"
-        source={require("../assets/vector4.png")}
-      />
-      <Image
-        style={[styles.vectorIcon7, styles.vectorIconLayout]}
-        contentFit="cover"
-        source={require("../assets/vector4.png")}
-      />
-      <View style={[styles.aboutUsScreenTeamItem, styles.aboutPosition]} />
-      <Image
-        style={[styles.homeIcon, styles.vectorPosition]}
+        style={[styles.homeIcon, styles.iconPosition1]}
         contentFit="cover"
         source={require("../assets/home.png")}
       />
       <Pressable
-        style={[styles.vector, styles.vectorPosition]}
+        style={styles.vectorIconPNG}
         onPress={() => navigation.navigate("AboutUsScreen")}
       >
         <Image
-          style={styles.iconLayout}
+          style={styles.vectorIconPNG}
           contentFit="cover"
-          source={require("../assets/vector3.png")}
+          source={require("../assets/vector7.png")}
         />
       </Pressable>
       <Image
@@ -97,50 +72,47 @@ const AboutUsScreenTeam = () => {
         source={require("../assets/task.png")}
       />
       <Image
+        style={[styles.vectorIcon, styles.iconPosition]}
+        contentFit="cover"
+        source={require("../assets/vector.png")}
+      />
+      <Image
         style={[styles.controlIcon, styles.iconPosition]}
         contentFit="cover"
         source={require("../assets/control1.png")}
       />
+      <TouchableOpacity
+        style={[styles.vectorIcon6, styles.buttonChildLayout]}
+        onPress={() => navigation.navigate("AboutUsScreen")}
+      >
+        <Image
+          style={styles.buttonChildLayout}
+          contentFit="cover"
+          source={require("../assets/vector7.png")}
+        />
+      </TouchableOpacity>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  aboutPosition: {
+  aboutLayout: {
     borderRadius: Border.br_xl,
-    left: "0.28%",
-    right: "-0.28%",
     position: "absolute",
     width: "100%",
   },
   teamTypo: {
     textAlign: "center",
+    color: Color.colorBlack,
     fontFamily: FontFamily.poppinsSemiBold,
     fontWeight: "600",
-    color: Color.colorBlack,
     position: "absolute",
   },
-  iconLayout1: {
+  buttonChildLayout: {
     maxHeight: "100%",
     maxWidth: "100%",
-    overflow: "hidden",
-  },
-  textPosition: {
-    top: "2.19%",
     position: "absolute",
-  },
-  vectorIconLayout1: {
-    width: "5.56%",
-    maxHeight: "100%",
-    maxWidth: "100%",
     overflow: "hidden",
-  },
-  iconLayout: {
-    height: "100%",
-    maxHeight: "100%",
-    maxWidth: "100%",
-    overflow: "hidden",
-    width: "100%",
   },
   getPosition: {
     display: "none",
@@ -167,9 +139,12 @@ const styles = StyleSheet.create({
     position: "absolute",
     overflow: "hidden",
   },
-  vectorPosition: {
+  iconPosition1: {
     top: "91.09%",
+    maxHeight: "100%",
+    maxWidth: "100%",
     position: "absolute",
+    overflow: "hidden",
   },
   iconPosition: {
     top: "90.78%",
@@ -180,48 +155,35 @@ const styles = StyleSheet.create({
   },
   aboutUsScreenTeamChild: {
     height: "15.78%",
-    top: "-2.97%",
-    bottom: "87.19%",
+    top: "-2.5%",
+    bottom: "86.72%",
     backgroundColor: Color.colorAntiquewhite,
+    left: "0%",
+    right: "0%",
   },
   team: {
     height: "4.53%",
     width: "25.28%",
-    top: "6.41%",
+    top: "7.41%",
     left: "38.61%",
-    fontSize: FontSize.size_lgi,
-  },
-  more4Icon: {
-    height: "3.75%",
-    width: "6.67%",
-    top: "6.72%",
-    right: "85.56%",
-    bottom: "89.53%",
-    left: "7.78%",
-    position: "absolute",
-  },
-  text: {
-    left: "6.67%",
-    fontSize: FontSize.size_sm,
-    fontWeight: "700",
-    fontFamily: FontFamily.poppinsBold,
-    textAlign: "left",
-    color: Color.colorBlack,
-    top: "2.19%",
+    fontSize: 28
   },
   buttonChild: {
+    height: "100%",
     top: "0%",
-    right: "0%",
     bottom: "0%",
-    left: "0%",
     borderRadius: Border.br_4xs,
-    position: "absolute",
+    left: "0%",
+    right: "0%",
+    width: "100%",
+    maxHeight: "100%",
+    maxWidth: "100%",
   },
   getStarted: {
     textAlign: "center",
+    color: Color.colorBlack,
     fontFamily: FontFamily.poppinsSemiBold,
     fontWeight: "600",
-    color: Color.colorBlack,
     position: "absolute",
   },
   getStarted1: {
@@ -252,52 +214,64 @@ const styles = StyleSheet.create({
   ourTeamIs: {
     height: "37.5%",
     width: "92.22%",
-    top: "50.31%",
-    left: "5%",
-    fontSize: FontSize.size_smi,
+    top: "50%",
+    left: "5.56%",
+    fontSize: 15,
   },
-  vectorIcon3: {
-    right: "54.72%",
-    left: "43.61%",
+  vectorIcon: {
+    height: "4.22%",
+    width: "13.83%",
+    right: "6.11%",
+    bottom: "4.69%",
+    left: "80.06%",
   },
-  vectorIcon4: {
+  vectorIconPNG: {
+    height: "15.47%",
+    width: "25.53%",
+    top: "7.28%",
+    right: "86.81%",
+    bottom: "93.25%",
+    left: "3.67%",
+    position: "absolute",
+    overflow: "hidden"
+  },
+  vectorIcon1: {
     right: "51.94%",
     left: "46.39%",
   },
-  vectorIcon5: {
+  vectorIcon2: {
     right: "49.17%",
     left: "49.17%",
   },
-  vectorIcon6: {
+  vectorIcon3: {
     right: "46.39%",
     left: "51.94%",
   },
-  vectorIcon7: {
+  vectorIcon4: {
     right: "43.61%",
     left: "54.72%",
   },
   aboutUsScreenTeamItem: {
     height: "14.53%",
     top: "87.81%",
+    right: "-0.28%",
     bottom: "-2.34%",
+    left: "0.28%",
     backgroundColor: Color.colorPeachpuff,
   },
   homeIcon: {
     height: "5.31%",
-    width: "10%",
+    width: "12%",
     right: "82.5%",
     bottom: "3.59%",
     left: "7.5%",
-    maxHeight: "100%",
-    maxWidth: "100%",
-    overflow: "hidden",
   },
-  vector: {
-    left: "83.33%",
+  vectorIcon5: {
+    height: "4.22%",
+    width: "13.83%",
     right: "5.83%",
     bottom: "4.69%",
-    width: "10.83%",
-    height: "4.22%",
+    left: "81.33%",
   },
   taskIcon: {
     height: "4.84%",
@@ -308,10 +282,18 @@ const styles = StyleSheet.create({
   },
   controlIcon: {
     height: "5%",
-    width: "10.28%",
+    width: "11.28%",
     right: "33.06%",
     bottom: "4.22%",
     left: "56.67%",
+  },
+  vectorIcon6: {
+    height: "3.47%",
+    width: "6.53%",
+    top: "7.03%",
+    right: "88.47%",
+    bottom: "89.5%",
+    left: "5%",
   },
   aboutUsScreenTeam: {
     backgroundColor: Color.colorMediumseagreen,
