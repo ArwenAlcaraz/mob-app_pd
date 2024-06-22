@@ -1,8 +1,8 @@
 import * as React from "react";
-import { StyleSheet, View, Text, Pressable } from "react-native";
+import { StyleSheet, View, Text, TouchableOpacity, Pressable} from "react-native";
 import { Image } from "expo-image";
 import { useNavigation } from "@react-navigation/native";
-import { Border, FontFamily, Color, FontSize } from "../GlobalStyles";
+import { Border, Color, FontFamily, FontSize } from "../GlobalStyles";
 
 const AboutUsScreenClient = () => {
   const navigation = useNavigation();
@@ -12,24 +12,14 @@ const AboutUsScreenClient = () => {
       <View style={[styles.aboutUsScreenClientChild, styles.aboutPosition]} />
       <Text style={[styles.client, styles.clientTypo]}>CLIENT</Text>
       <Image
-        style={[styles.more5Icon, styles.iconLayout1]}
+        style={[styles.vectorIcon1, styles.vectorIconLayout]}
         contentFit="cover"
-        source={require("../assets/more-3.png")}
+        source={require("../assets/vector4.png")}
       />
       <Image
-        style={[styles.vectorIcon, styles.iconLayout1]}
+        style={[styles.vectorIcon2, styles.vectorIconLayout]}
         contentFit="cover"
-        source={require("../assets/vector.png")}
-      />
-      <Image
-        style={[styles.vectorIcon1, styles.textPosition]}
-        contentFit="cover"
-        source={require("../assets/vector1.png")}
-      />
-      <Image
-        style={[styles.vectorIcon2, styles.vectorIconLayout1]}
-        contentFit="cover"
-        source={require("../assets/vector2.png")}
+        source={require("../assets/vector4.png")}
       />
       <Image
         style={[styles.vectorIcon3, styles.vectorIconLayout]}
@@ -41,24 +31,9 @@ const AboutUsScreenClient = () => {
         contentFit="cover"
         source={require("../assets/vector4.png")}
       />
-      <Image
-        style={[styles.vectorIcon5, styles.vectorIconLayout]}
-        contentFit="cover"
-        source={require("../assets/vector4.png")}
-      />
-      <Image
-        style={[styles.vectorIcon6, styles.vectorIconLayout]}
-        contentFit="cover"
-        source={require("../assets/vector4.png")}
-      />
-      <Image
-        style={[styles.vectorIcon7, styles.vectorIconLayout]}
-        contentFit="cover"
-        source={require("../assets/vector4.png")}
-      />
       <View style={styles.button}>
         <Image
-          style={[styles.buttonChild, styles.iconLayout]}
+          style={[styles.buttonChild, styles.vectorIconLayout]}
           contentFit="cover"
           source={require("../assets/rectangle-11.png")}
         />
@@ -77,20 +52,25 @@ const AboutUsScreenClient = () => {
       </Text>
       <View style={[styles.aboutUsScreenClientItem, styles.aboutPosition]} />
       <Image
-        style={[styles.homeIcon, styles.vectorPosition]}
+        style={[styles.homeIcon, styles.iconPosition1]}
         contentFit="cover"
         source={require("../assets/home.png")}
       />
       <Pressable
-        style={[styles.vector, styles.vectorPosition]}
+        style={styles.vectorIconPNG}
         onPress={() => navigation.navigate("AboutUsScreen")}
       >
         <Image
-          style={styles.iconLayout}
+          style={styles.vectorIconPNG}
           contentFit="cover"
-          source={require("../assets/vector3.png")}
+          source={require("../assets/vector7.png")}
         />
       </Pressable>
+      <Image
+        style={[styles.vectorIcon5, styles.iconPosition1]}
+        contentFit="cover"
+        source={require("../assets/vector.png")}
+      />
       <Image
         style={[styles.taskIcon, styles.iconPosition]}
         contentFit="cover"
@@ -101,6 +81,16 @@ const AboutUsScreenClient = () => {
         contentFit="cover"
         source={require("../assets/control1.png")}
       />
+      <TouchableOpacity
+        style={[styles.vectorIcon6, styles.vectorIconLayout]}
+        onPress={() => navigation.navigate("AboutUsScreen")}
+      >
+        <Image
+          style={styles.vectorIconLayout}
+          contentFit="cover"
+          source={require("../assets/vector7.png")}
+        />
+      </TouchableOpacity>
     </View>
   );
 };
@@ -115,42 +105,16 @@ const styles = StyleSheet.create({
   },
   clientTypo: {
     textAlign: "center",
+    color: Color.colorBlack,
     fontFamily: FontFamily.poppinsSemiBold,
     fontWeight: "600",
-    color: Color.colorBlack,
     position: "absolute",
-  },
-  iconLayout1: {
-    maxHeight: "100%",
-    maxWidth: "100%",
-    overflow: "hidden",
-  },
-  textPosition: {
-    top: "2.19%",
-    position: "absolute",
-  },
-  vectorIconLayout1: {
-    width: "5.56%",
-    maxHeight: "100%",
-    maxWidth: "100%",
-    overflow: "hidden",
   },
   vectorIconLayout: {
-    bottom: "50.78%",
-    top: "48.28%",
-    width: "1.67%",
-    height: "0.94%",
     maxHeight: "100%",
     maxWidth: "100%",
     position: "absolute",
     overflow: "hidden",
-  },
-  iconLayout: {
-    height: "100%",
-    maxHeight: "100%",
-    maxWidth: "100%",
-    overflow: "hidden",
-    width: "100%",
   },
   getPosition: {
     display: "none",
@@ -167,9 +131,12 @@ const styles = StyleSheet.create({
     fontWeight: "600",
     position: "absolute",
   },
-  vectorPosition: {
+  iconPosition1: {
     top: "91.09%",
+    maxHeight: "100%",
+    maxWidth: "100%",
     position: "absolute",
+    overflow: "hidden",
   },
   iconPosition: {
     top: "90.78%",
@@ -186,63 +153,87 @@ const styles = StyleSheet.create({
   },
   client: {
     height: "4.53%",
-    width: "25.28%",
-    top: "6.25%",
+    width: "26.28%",
+    top: "7.25%",
     left: "38.33%",
-    fontSize: FontSize.size_lgi,
+    fontSize: 28,
   },
-  more5Icon: {
-    height: "3.75%",
-    width: "6.67%",
-    top: "6.56%",
-    right: "85.83%",
-    bottom: "89.69%",
-    left: "7.5%",
-    position: "absolute",
-  },
-  text: {
-    left: "6.67%",
-    fontSize: FontSize.size_sm,
-    fontWeight: "700",
-    fontFamily: FontFamily.poppinsBold,
-    textAlign: "left",
-    color: Color.colorBlack,
-    top: "2.19%",
-  },
-  vectorIcon3: {
+  vectorIcon: {
     right: "54.44%",
     left: "43.89%",
+    bottom: "50.78%",
+    top: "48.28%",
+    width: "1.67%",
+    height: "0.94%",
+    maxHeight: "100%",
+    maxWidth: "100%",
   },
-  vectorIcon4: {
+  vectorIcon1: {
     right: "51.67%",
     left: "46.67%",
+    bottom: "50.78%",
+    top: "48.28%",
+    width: "1.67%",
+    height: "0.94%",
+    maxHeight: "100%",
+    maxWidth: "100%",
   },
-  vectorIcon5: {
+  vectorIconPNG: {
+    height: "15.47%",
+    width: "25.53%",
+    top: "7.28%",
+    right: "86.81%",
+    bottom: "93.25%",
+    left: "3.67%",
+    position: "absolute",
+    overflow: "hidden"
+  },
+  vectorIcon2: {
     right: "48.89%",
     left: "49.44%",
+    bottom: "50.78%",
+    top: "48.28%",
+    width: "1.67%",
+    height: "0.94%",
+    maxHeight: "100%",
+    maxWidth: "100%",
   },
-  vectorIcon6: {
+  vectorIcon3: {
     right: "46.11%",
     left: "52.22%",
+    bottom: "50.78%",
+    top: "48.28%",
+    width: "1.67%",
+    height: "0.94%",
+    maxHeight: "100%",
+    maxWidth: "100%",
   },
-  vectorIcon7: {
+  vectorIcon4: {
     right: "43.33%",
     left: "55%",
+    bottom: "50.78%",
+    top: "48.28%",
+    width: "1.67%",
+    height: "0.94%",
+    maxHeight: "100%",
+    maxWidth: "100%",
   },
   buttonChild: {
+    height: "100%",
     top: "0%",
     bottom: "0%",
     borderRadius: Border.br_4xs,
     left: "0%",
     right: "0%",
-    height: "100%",
-    position: "absolute",
+    maxHeight: "100%",
+    maxWidth: "100%",
+    width: "100%",
   },
   getStarted: {
     textAlign: "center",
+    color: Color.colorBlack,
     fontFamily: FontFamily.poppinsSemiBold,
     fontWeight: "600",
-    color: Color.colorBlack,
     position: "absolute",
   },
   getStarted1: {
@@ -275,7 +266,7 @@ const styles = StyleSheet.create({
     width: "92.22%",
     top: "50.31%",
     left: "3.89%",
-    fontSize: FontSize.size_smi,
+    fontSize: 14,
   },
   aboutUsScreenClientItem: {
     height: "14.53%",
@@ -285,20 +276,17 @@ const styles = StyleSheet.create({
   },
   homeIcon: {
     height: "5.31%",
-    width: "10%",
+    width: "11%",
     right: "82.78%",
     bottom: "3.59%",
     left: "7.22%",
-    maxHeight: "100%",
-    maxWidth: "100%",
-    overflow: "hidden",
   },
-  vector: {
-    left: "83.06%",
+  vectorIcon5: {
+    height: "4.22%",
+    width: "13.83%",
     right: "6.11%",
     bottom: "4.69%",
-    width: "10.83%",
-    height: "4.22%",
+    left: "81.06%",
   },
   taskIcon: {
     height: "4.84%",
@@ -309,10 +297,18 @@ const styles = StyleSheet.create({
   },
   controlIcon: {
     height: "5%",
-    width: "10.28%",
+    width: "11.28%",
     right: "33.33%",
     bottom: "4.22%",
     left: "56.39%",
+  },
+  vectorIcon6: {
+    height: "3.47%",
+    width: "6.53%",
+    top: "6.88%",
+    right: "87.08%",
+    bottom: "89.66%",
+    left: "6.39%",
   },
   aboutUsScreenClient: {
     backgroundColor: Color.colorMediumseagreen,
