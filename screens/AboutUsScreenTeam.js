@@ -104,7 +104,7 @@ const styles = StyleSheet.create({
   teamTypo: {
     textAlign: "center",
     color: Color.colorBlack,
-    fontFamily: FontFamily.poppinsSemiBold,
+    fontFamily: 'Poppins-SemiBold',
     fontWeight: "600",
     position: "absolute",
   },
@@ -125,7 +125,7 @@ const styles = StyleSheet.create({
   ourTeamIsTypo: {
     color: Color.colorSnow,
     textAlign: "center",
-    fontFamily: FontFamily.poppinsSemiBold,
+    fontFamily: 'Poppins-SemiBold',
     fontWeight: "600",
     position: "absolute",
   },
@@ -166,7 +166,11 @@ const styles = StyleSheet.create({
     width: "25.28%",
     top: "7.41%",
     left: "38.61%",
-    fontSize: 28
+    fontSize: 28,
+    textShadowColor: 'rgba(0, 0, 0, 0.75)',
+    textShadowOffset: { width: -1, height: 1 },
+    textShadowRadius: 2,
+    letterSpacing: 2,
   },
   buttonChild: {
     height: "100%",
@@ -182,7 +186,7 @@ const styles = StyleSheet.create({
   getStarted: {
     textAlign: "center",
     color: Color.colorBlack,
-    fontFamily: FontFamily.poppinsSemiBold,
+    fontFamily: 'Poppins-SemiBold',
     fontWeight: "600",
     position: "absolute",
   },
