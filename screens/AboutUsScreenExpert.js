@@ -116,7 +116,7 @@ const styles = StyleSheet.create({
   expertTypo: {
     textAlign: "center",
     color: Color.colorBlack,
-    fontFamily: FontFamily.poppinsSemiBold,
+    fontFamily:'Poppins-SemiBold',
     fontWeight: "600",
   },
   vectorIconLayout1: {
@@ -146,7 +146,7 @@ const styles = StyleSheet.create({
   getStarted1Typo: {
     color: Color.colorSnow,
     textAlign: "center",
-    fontFamily: FontFamily.poppinsSemiBold,
+    fontFamily: 'Poppins-SemiBold',
     fontWeight: "600",
   },
   iconPosition1: {
@@ -175,11 +175,15 @@ const styles = StyleSheet.create({
   },
   expert: {
     height: "4.53%",
-    width: "29.28%",
+    width: "32.28%",
     top: "7.25%",
-    left: "36.33%",
+    left: "34.33%",
     fontSize: 28,
     position: "absolute",
+    textShadowColor: 'rgba(0, 0, 0, 0.75)',
+    textShadowOffset: { width: -1, height: 1 },
+    textShadowRadius: 2,
+    letterSpacing: 2,
   },
   vectorIcon: {
     right: "53.89%",
@@ -269,7 +273,7 @@ const styles = StyleSheet.create({
   getStarted: {
     textAlign: "center",
     color: Color.colorBlack,
-    fontFamily: FontFamily.poppinsSemiBold,
+    fontFamily: 'Poppins-SemiBold',
     fontWeight: "600",
   },
   getStarted1: {
@@ -339,7 +343,7 @@ const styles = StyleSheet.create({
     fontSize: 15,
     color: Color.colorSnow,
     textAlign: "center",
-    fontFamily: FontFamily.poppinsSemiBold,
+    fontFamily: 'Poppins-SemiBold',
     fontWeight: "600",
   },
   vectorIcon8: {
