@@ -3,7 +3,6 @@ import { StyleSheet, View, Text, TouchableOpacity, Pressable } from "react-nativ
 import { Image } from "expo-image";
 import { useNavigation } from "@react-navigation/native";
 import { Border, FontFamily, FontSize, Color } from "../GlobalStyles";
-import Pinchable from 'react-native-pinchable';
 
 const AboutUsScreenDevice = () => {
   const navigation = useNavigation();
@@ -94,7 +93,7 @@ const styles = StyleSheet.create({
   },
   deviceTypo: {
     textAlign: "center",
-    fontFamily: FontFamily.poppinsSemiBold,
+    fontFamily: 'Poppins-SemiBold',
     fontWeight: "600",
     position: "absolute",
   },
@@ -129,7 +128,7 @@ const styles = StyleSheet.create({
     width: "60.38%",
     height: "49.24%",
     textAlign: "center",
-    fontFamily: FontFamily.poppinsSemiBold,
+    fontFamily: 'Poppins-SemiBold',
     fontWeight: "600",
     position: "absolute",
   },
@@ -143,11 +142,15 @@ const styles = StyleSheet.create({
   },
   device: {
     height: "4.53%",
-    width: "29.28%",
+    width: "31.28%",
     top: "7.88%",
-    left: "36.33%",
+    left: "34.33%",
     fontSize: 28,
     color: Color.colorBlack,
+    textShadowColor: 'rgba(0, 0, 0, 0.75)',
+    textShadowOffset: { width: -1, height: 1 },
+    textShadowRadius: 2,
+    letterSpacing: 2,
   },
   theDeviceIs: {
     height: "32.5%",
