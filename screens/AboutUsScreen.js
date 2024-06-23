@@ -90,6 +90,11 @@ const AboutUsScreen = () => {
         contentFit="cover"
         source={require("../assets/home.png")}
       />
+          <Pressable
+        style={[styles.homeIcon, styles.iconLayout]}
+        onPress={() => navigation.navigate("HomeScreen")}
+      >
+      </Pressable>
       <Image
         style={[styles.vectorIcon, styles.iconLayout]}
         contentFit="cover"
@@ -105,11 +110,26 @@ const AboutUsScreen = () => {
         contentFit="cover"
         source={require("../assets/control.png")}
       />
+          <Pressable
+        style={[styles.controlIcon, styles.iconPosition]}
+        onPress={() => navigation.navigate("ControlOff")}
+      >
+      </Pressable>
       <Image
         style={[styles.vectorIcon1, styles.iconLayout]}
         contentFit="cover"
         source={require("../assets/vector7.png")}
       />
+      <Pressable
+        style={[styles.vectorIcon1, styles.iconLayout]}
+        onPress={() => navigation.navigate("HomeScreen")}
+      >
+        <Image
+          style={styles.vectorIcon1}
+          contentFit="cover"
+          source={require("../assets/vector7.png")}
+        />
+      </Pressable>
     </View>
   );
 };
@@ -123,7 +143,7 @@ const styles = StyleSheet.create({
     width: "60.38%",
     height: "49.23%",
     textAlign: "center",
-    fontFamily: FontFamily.poppinsSemiBold,
+    fontFamily: 'Poppins-SemiBold',
     fontWeight: "600",
     position: "absolute",
   },
@@ -136,7 +156,7 @@ const styles = StyleSheet.create({
   },
   teamTypo: {
     textAlign: "center",
-    fontFamily: FontFamily.poppinsSemiBold,
+    fontFamily:'Poppins-SemiBold',
     fontWeight: "600",
     fontHeight: "800",
     position: "absolute",
@@ -174,7 +194,7 @@ const styles = StyleSheet.create({
   },
   buttonChild: {
   borderRadius: Border.br_4xs,
-  backgroundColor: Color.colorDarkslategray,
+  backgroundColor: "#132A17",
   left: "0%",
   bottom: "0%",
   right: "0%",
@@ -183,10 +203,10 @@ const styles = StyleSheet.create({
   position: "absolute",
   width: "100%",
   shadowColor: "#000",
-  shadowOffset: { width: 9, height: 7 }, 
-  shadowOpacity: 0.6, 
-  shadowRadius: 7, 
-  elevation: 11,
+  shadowOffset: { width: 5, height: 3 }, 
+  shadowOpacity: 0.1, 
+  shadowRadius: 2, 
+  elevation: 6,
   },
   getStarted: {
     color: Color.colorBlack,
@@ -203,7 +223,7 @@ const styles = StyleSheet.create({
     left: "9.72%",
     shadowOpacity: 1,
     elevation: 4,
-    shadowRadius: 4,
+    shadowRadius: 2,
     shadowOffset: {
       width: 0,
       height: 4,
@@ -224,6 +244,9 @@ const styles = StyleSheet.create({
     left: "12%",
     fontSize: 25,
     color: Color.colorBlack,
+    textShadowColor: 'rgba(0, 0, 0, 0.75)',
+    textShadowOffset: { width: -1, height: 1 },
+    textShadowRadius: 2,
   },
   groupPosition: {
     backgroundColor: Color.colorSeagreen,
@@ -250,6 +273,9 @@ const styles = StyleSheet.create({
     left: "7.41%",
     fontSize: 27,
     color: Color.colorWhite,
+    textShadowColor: 'rgba(0, 0, 0, 0.75)',
+    textShadowOffset: { width: -1, height: 1 },
+    textShadowRadius: 2,
   },
   rectangleParent: {
     top: "27.97%",
@@ -316,7 +342,7 @@ const styles = StyleSheet.create({
     height: "5.31%",
     width: "12%",
     right: "82.78%",
-    bottom: "3.75%",
+    bottom: "2.75%",
     left: "7.22%",
     top: "90.94%",
     maxHeight: "100%",
