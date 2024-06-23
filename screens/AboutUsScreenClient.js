@@ -106,7 +106,7 @@ const styles = StyleSheet.create({
   clientTypo: {
     textAlign: "center",
     color: Color.colorBlack,
-    fontFamily: FontFamily.poppinsSemiBold,
+    fontFamily: 'Poppins-SemiBold',
     fontWeight: "600",
     position: "absolute",
   },
@@ -127,7 +127,7 @@ const styles = StyleSheet.create({
   getStarted1Typo: {
     color: Color.colorSnow,
     textAlign: "center",
-    fontFamily: FontFamily.poppinsSemiBold,
+    fontFamily: 'Poppins-SemiBold',
     fontWeight: "600",
     position: "absolute",
   },
@@ -153,10 +153,14 @@ const styles = StyleSheet.create({
   },
   client: {
     height: "4.53%",
-    width: "26.28%",
+    width: "32.28%",
     top: "7.25%",
-    left: "38.33%",
+    left: "35.33%",
     fontSize: 28,
+    textShadowColor: 'rgba(0, 0, 0, 0.75)',
+    textShadowOffset: { width: -1, height: 1 },
+    textShadowRadius: 2,
+    letterSpacing: 2,
   },
   vectorIcon: {
     right: "54.44%",
@@ -232,7 +236,7 @@ const styles = StyleSheet.create({
   getStarted: {
     textAlign: "center",
     color: Color.colorBlack,
-    fontFamily: FontFamily.poppinsSemiBold,
+    fontFamily: 'Poppins-SemiBold',
     fontWeight: "600",
     position: "absolute",
   },
