@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#69b578", // Background color of the entire screen
+    backgroundColor: "#8ad499", // Background color of the entire screen
   },
   logo: {
     width: 300, // Adjust width as needed
