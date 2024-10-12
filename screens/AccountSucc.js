@@ -33,17 +33,12 @@ const AccountSucc = () => {
         style={[styles.goToLog, styles.goToLogPosition]}
         onPress={() => navigation.navigate("LoginScreen")}
       >
-        <Text style={styles.goToLog}>Go to log in</Text>
+        <Text style={styles.goToLog}>Proceed to log in</Text>
       </Pressable>
       <Pressable
         onPress={() => navigation.navigate("LoginScreen")} >
-        <Text style={styles.addButtonText}>Go to log in</Text>
+        <Text style={styles.addButtonText}>Proceed to log in</Text>
       </Pressable>
-      <Image
-        style={[styles.vectorIcon, styles.goToLogPosition]}
-        contentFit="cover"
-        source={require("../assets/vector7.png")}
-      />
     </View>
   );
 };
@@ -109,7 +104,7 @@ const styles = StyleSheet.create({
     right: "0%",
     bottom: "0%",
     left: "0%",
-    borderRadius: 15,
+    borderRadius: 35,
     width: "100%",
   },
   getStarted: {
@@ -120,11 +115,11 @@ const styles = StyleSheet.create({
   },
   button: {
     height: "7.03%",
-    width: "85.56%",
-    top: "45.31%",
+    width: "55.56%",
+    top: "56.31%",
     right: "7.22%",
     bottom: "47.66%",
-    left: "7.22%",
+    left: "24.22%",
     shadowColor: "rgba(0, 0, 0, 0.25)",
     shadowOffset: {
       width: 0,
@@ -133,14 +128,20 @@ const styles = StyleSheet.create({
     shadowRadius: 4,
     elevation: 4,
     shadowOpacity: 1,
-    borderRadius: 15,
+    borderRadius: 55,
   },
   accountCreatedSuccessfully1: {
+    textShadowRadius: 2,
+    textShadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    textShadowColor: "rgba(255, 255, 255, 0.25)",
     width: "91.39%",
     top: "46.41%",
     left: "4.44%",
-    color: "white",
-    fontSize: FontSize.size_lg,
+    color: "#3A7D44",
+    fontSize: 19,
     textAlign: "center",
     fontFamily: FontFamily.poppinsSemiBold,
     fontWeight: "600",
@@ -149,10 +150,10 @@ const styles = StyleSheet.create({
   },
   goToLog: {
       width: "91.39%",
-      top: "46.41%",
+      top: "50.41%",
       left: "4.44%",
-      color: "white",
-      fontSize: FontSize.size_lg,
+      //color: "white",
+      fontSize: 15,
       textAlign: "center",
       fontFamily: FontFamily.poppinsSemiBold,
       fontWeight: "600",
@@ -160,12 +161,18 @@ const styles = StyleSheet.create({
       position: "absolute",
   },
   addButtonText: {
-    color: "#69B578",
-    fontSize: 18,
+    textShadowRadius: 2,
+    textShadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    textShadowColor: "rgba(0, 0, 0, 0.25)",
+    color: "white",
+    fontSize: 17,
     fontFamily: 'Poppins-SemiBold',
     textAlign: 'center',
-    top: 410,
-    left: 20,
+    top: 450,
+    left: 10,
   },
   vectorIcon: {
     height: "2.34%",
