@@ -25,7 +25,7 @@ const ControlOff = () => {
     <View style={styles.aboutUsScreen}>
       <View style={[styles.aboutUsScreenDeviceItem, styles.aboutPosition]} />
       <View style={[styles.aboutUsScreenChild, styles.aboutChildPosition]} />
-      <Text style={[styles.about, styles.teamTypo]}>Controls</Text>
+      <Text style={[styles.about, styles.teamTypo]}>CONTROLS</Text>
       <Pressable
         style={styles.vectorIconPNG}
         onPress={() => navigation.navigate("HomeScreen")}
@@ -111,40 +111,40 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   homeIcon: {
-    height: "5.84%",
-    width: "11.44%",
+    height: "3.94%",
+    width: "9.44%",
     right: "29.44%",
-    bottom: "5.53%",
+    bottom: "6.53%",
     left: "-9.11%",
     top: 709,
     zIndex: 1,
   },
   taskIcon: {
-    height: "4.84%",
-    width: "9.44%",
+    height: "3.84%",
+    width: "7.44%",
     right: "29.44%",
     bottom: "6.53%",
     left: "-12.11%",
-    top: 606,
+    top: 610,
   },
   controlIcon: {
-    height: "5%",
-    width: "11.28%",
+    height: "4%",
+    width: "9.28%",
     right: "33.06%",
-    bottom: "-73.28%",
+    bottom: "-74.18%",
     left: "12.67%",
   },
   lightGreenTint: {
     tintColor: "#69B578",
   },
   vectorIcon5: {
-    height: "4.22%",
-    width: "13.83%",
+    height: "3.22%",
+    width: "10.83%",
     right: "5.83%",
     bottom: "4.84%",
     left: "80.33%",
     position: "absolute",
-    top: "91.55%",
+    top: "92.75%",
   },
   button: {
     height: "30.78%",
@@ -156,7 +156,7 @@ const styles = StyleSheet.create({
   buttonPosition: {
     left: "9.5%",
     position: "absolute",
-    top: 712,
+    top: 722,
   },
   aboutChildPosition: {
     borderRadius: Border.br_xl,
@@ -248,7 +248,7 @@ const styles = StyleSheet.create({
     textShadowRadius: 2,
   },
   buttonText2: {
-    color: "#fff",
+    color: "#8E8686",
     fontSize: 27,
     fontFamily: 'Poppins-SemiBold',
     top: 10,
