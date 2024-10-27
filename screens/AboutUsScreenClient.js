@@ -125,11 +125,14 @@ const styles = StyleSheet.create({
     height: "49.24%",
   },
   getStarted1Typo: {
-    color: Color.colorSnow,
+    color: "#AFE1AF",
     textAlign: "center",
     fontFamily: 'Poppins-SemiBold',
     fontWeight: "600",
     position: "absolute",
+    textShadowColor: '#000',  
+    textShadowOffset: { width: 1, height: 1 },  
+    textShadowRadius: 3,  
   },
   iconPosition1: {
     top: "91.09%",
