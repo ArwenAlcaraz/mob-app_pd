@@ -157,8 +157,11 @@ const styles = StyleSheet.create({
     width: "85.83%",
     top: "51.56%",
     fontSize: 16,
-    color: Color.colorSnow_200,
+    color: "#AFE1AF",
     left: "6.94%",
+    textShadowColor: '#000',  
+    textShadowOffset: { width: 1, height: 1 },  
+    textShadowRadius: 3, 
   },
   vectorIcon: {
     right: "54.17%",
