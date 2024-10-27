@@ -1,16 +1,66 @@
-import * as React from "react";
-import { StyleSheet, View, Text, Pressable } from "react-native";
-import { useNavigation } from "@react-navigation/native";
-import { Image } from "expo-image";
-import { Border, FontSize, FontFamily, Color } from "../GlobalStyles";
+import * as React from 'react';
+import { useState } from 'react';
+import { StyleSheet, View, Text, Pressable, Dimensions, Button } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import { Image } from 'expo-image';
+import { BarChart } from 'react-native-chart-kit';
+import { Border, FontSize, FontFamily, Color } from '../GlobalStyles';
 
 const Stats = () => {
   const navigation = useNavigation();
+
+  const [chartData, setChartData] = useState({
+    labels: ['Sun', 'Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat'],
+    datasets: [
+      {
+        label: 'Number of Atangya Detected',
+        data: [5, 10, 6, 8, 3, 7, 2],
+        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+        borderColor: 'rgba(255, 99, 132, 1)',
+        borderWidth: 1,
+      },
+    ],
+  });
+
+  const refreshData = () => {
+    // Update the data here, for demonstration using random values
+    const newData = chartData.datasets[0].data.map(() => Math.floor(Math.random() * 20));
+    setChartData({
+      ...chartData,
+      datasets: [{
+        ...chartData.datasets[0],
+        data: newData
+      }]
+    });
+  };
+
+  const screenWidth = Dimensions.get('window').width 
+
   return (
     <View style={styles.statistics}>
       <View style={styles.statisticsChild} />
       <View style={[styles.statisticsItem, styles.statisticsLayout]} />
       <Text style={styles.historyData}>HISTORY DATA</Text>
+      <View style={styles.chartContainer}>
+      <BarChart
+        data={chartData}
+        width={screenWidth - 20}  
+        height={300}  
+        yAxisLabel=""
+        chartConfig={{
+          backgroundColor: '#ffffff',
+          backgroundGradientFrom: '#ffffff',
+          backgroundGradientTo: '#ffffff',
+          decimalPlaces: 2,
+          color: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
+          style: { borderRadius: 20 },
+        }}
+        style={styles.chart}
+        />
+        </View>
+        <View style={styles.refreshButton}>
+        <Button title="Refresh Data" onPress={refreshData} />
+      </View>
       <View style={[styles.button, styles.buttonShadowBox1]}>
         <View style={[styles.buttonChild, styles.buttonPosition]} />
         <Text style={[styles.getStarted, styles.getTypo1]}>Get Started</Text>
@@ -633,12 +683,13 @@ const styles = StyleSheet.create({
     left: "0%",
     right: "0%",
   },
-  historyData: {
-    height: "4.56%",
+historyData: {
+    height: "35.56%",
     width: "46.94%",
     top: "7.52%",
     left: "27.47%",
-    fontSize: 27,
+    fontSize: 22,
+    lineHeight: 23, 
     textShadowColor: 'rgba(0, 0, 0, 0.75)',
     textShadowOffset: { width: -1, height: 1 },
     textShadowRadius: 2,
@@ -1315,6 +1366,28 @@ const styles = StyleSheet.create({
     height: 789,
     overflow: "hidden",
     width: "100%",
+  },
+  chartContainer: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    left: 10,
+    top: 195,
+    position: "absolute",
+  },
+  chart: {
+    marginVertical: 8,
+    borderRadius: 10,
+  },
+  refreshButton: {
+  color: "#AFE1AF",
+  borderRadius: 5,
+  textAlign: 'center',
+  fontWeight: 'bold',
+  top: 520,
+  width: '45%', 
+  left: 105,
+  position: "absolute",
   },
 });
 
