@@ -136,9 +136,9 @@ const styles = StyleSheet.create({
     fontFamily: 'Poppins-SemiBold',
     bottom: 100,
     right: 90,
-    textShadowColor: 'rgba(0, 0, 0, 0.75)',
-    textShadowOffset: { width: -1, height: 1 },
-    textShadowRadius: 2,
+    textShadowColor: '#000',  
+    textShadowOffset: { width: 1, height: 1 },  
+    textShadowRadius: 3,  
     letterSpacing: 1, 
   },
   Description: {
