@@ -122,13 +122,16 @@ const styles = StyleSheet.create({
     width: "60.38%",
     height: "49.24%",
   },
-  ourTeamIsTypo: {
-    color: Color.colorSnow,
-    textAlign: "center",
-    fontFamily: 'Poppins-SemiBold',
-    fontWeight: "600",
-    position: "absolute",
-  },
+ourTeamIsTypo: {
+  color: "#AFE1AF",
+  textAlign: "center",
+  fontFamily: 'Poppins-SemiBold',
+  fontWeight: "600",
+  position: "absolute",
+  textShadowColor: '#000',  
+  textShadowOffset: { width: 1, height: 1 },  
+  textShadowRadius: 3,  
+},
   vectorIconLayout: {
     bottom: "50.94%",
     top: "48.13%",
