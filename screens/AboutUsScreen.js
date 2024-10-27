@@ -44,26 +44,7 @@ const AboutUsScreen = () => {
         <View style={styles.groupPosition} />
         <Text style={[styles.team, styles.teamTypo]}>{`Device `}</Text>
       </Pressable>
-      <Image
-        style={[styles.aboutUsScreenItem, styles.aboutLayout]}
-        contentFit="cover"
-        source={require("../assets/ellipse-3.png")}
-      />
-      <Image
-        style={[styles.aboutUsScreenInner, styles.aboutLayout]}
-        contentFit="cover"
-        source={require("../assets/ellipse-3.png")}
-      />
-      <Image
-        style={[styles.ellipseIcon, styles.aboutLayout]}
-        contentFit="cover"
-        source={require("../assets/ellipse-3.png")}
-      />
-      <Image
-        style={[styles.aboutUsScreenChild1, styles.aboutLayout]}
-        contentFit="cover"
-        source={require("../assets/ellipse-3.png")}
-      />
+      
       <Image
         style={styles.groupChat1Icon}
         contentFit="cover"
@@ -75,7 +56,7 @@ const AboutUsScreen = () => {
         source={require("../assets/user-1.png")}
       />
       <Image
-        style={[styles.expert1Icon, styles.iconPosition1]}
+        style={styles.expert1Icon}
         contentFit="cover"
         source={require("../assets/expert-1.png")}
       />
@@ -160,23 +141,19 @@ const styles = StyleSheet.create({
     fontWeight: "600",
     fontHeight: "800",
     position: "absolute",
+    top: "-10%",
   },
   rectangleGroupPosition: {
-    left: "33.33%",
+    left: "29%",
     right: "14.17%",
     width: "52.5%",
     height: "7.5%",
     position: "absolute",
   },
-  aboutLayout: {
-    height: 62,
-    width: 61,
-    left: 50,
-    position: "absolute",
-  },
+  
   iconPosition1: {
     width: 40,
-    left: 60,
+    left: 108,
     position: "absolute",
   },
   iconLayout: {
@@ -249,11 +226,11 @@ const styles = StyleSheet.create({
     textShadowRadius: 2,
   },
   groupPosition: {
-    backgroundColor: Color.colorSeagreen,
-    left: "0%",
+    backgroundColor: "#70b47c",
+    left: "-10%",
     bottom: "0%",
     right: "0%",
-    top: "0%",
+    top: "-30%",
     height: "100%",
     shadowOpacity: 1,
     elevation: 4,
@@ -287,9 +264,9 @@ const styles = StyleSheet.create({
   },
   rectangleContainer: {
     top: "53.59%",
-    right: "14.44%",
+    right: "16.44%",
     bottom: "38.91%",
-    left: "33.06%",
+    left: "29.06%",
     width: "52.5%",
     height: "7.5%",
     position: "absolute",
@@ -311,26 +288,31 @@ const styles = StyleSheet.create({
     top: 521,
   },
   groupChat1Icon: {
-    top: 225,
-    left: 53,
+    top: 205,
+    left: 105,
     width: 54,
     height: 58,
     position: "absolute",
   },
   user1Icon: {
-    top: 329,
-    left: 55,
+    top: 305,
+    left: 105,
     width: 50,
     height: 50,
     position: "absolute",
   },
   expert1Icon: {
-    top: 434,
-    height: 43,
+    top: 412,
+    height: 44,
+    width: 40,
+    left: 108,
+    position: "absolute",
   },
   pcbBoard1Icon: {
-    top: 531,
+    top: 515,
     height: 38,
+    left: 7,
+    position: "absolute",
   },
   aboutUsScreenChild2: {
     height: "14.53%",
