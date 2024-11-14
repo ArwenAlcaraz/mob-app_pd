@@ -1,26 +1,85 @@
 import * as React from 'react';
-import { useState } from 'react';
-import { StyleSheet, View, Text, Pressable, Dimensions, Button } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
-import { Image } from 'expo-image';
-import { BarChart } from 'react-native-chart-kit';
+import { useEffect, useState } from 'react';
+import { StyleSheet, View, Text, Button, Alert, Dimensions, Image, Pressable } from 'react-native';
 import { Border, FontSize, FontFamily, Color } from '../GlobalStyles';
+import { useNavigation } from '@react-navigation/native';
+import { BarChart } from 'react-native-chart-kit';
+import axios from "axios";
 
 const Stats = () => {
   const navigation = useNavigation();
 
+  const handleGetStartedPress = () => {
+    // Navigate to Details
+    navigation.navigate('Details');
+  };
+
   const [chartData, setChartData] = useState({
-    labels: ['Sun', 'Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat'],
+    labels: [],
     datasets: [
       {
         label: 'Number of Atangya Detected',
-        data: [5, 10, 6, 8, 3, 7, 2],
+        data: [],
         backgroundColor: 'rgba(255, 99, 132, 0.2)',
         borderColor: 'rgba(255, 99, 132, 1)',
         borderWidth: 1,
       },
     ],
   });
+
+  const fetchData = async () => {
+    try {
+      const response = await axios.get(
+        "https://production-myentobackend.onrender.com/api/v1/auth/get-all-results"
+      );
+      console.log("Fetched data:", response.data);
+
+      if (response.data.success) {
+        const detections = response.data.detections;
+
+        // Prepare labels and data for the chart (Only Time)
+        const labels = detections.map((detection) => {
+          const time = new Date(detection.createdAt);
+          return time.toLocaleTimeString("en-US", {
+            hour: "numeric",
+            minute: "numeric",
+            hour12: true, // 12-hour format with AM/PM
+          });
+        });
+        const panicleCounts = detections.map(
+          (detection) => detection.numberOfPanicles
+        );
+        const bugCounts = detections.map(
+          (detection) => detection.numberOfBugs
+        );
+
+        // Update chart data with time-based labels
+        setChartData({
+          labels: labels,
+          datasets: [
+            {
+              data: bugCounts,
+              color: "rgba(0, 122, 255)", // Blue bars for Bugs
+              label: "Bugs",
+            },
+            {
+              data: panicleCounts,
+              color: "rgba(255, 99, 132)", // Red bars for Panicles
+              label: "Panicles",
+            },
+          ],
+        });
+      } else {
+        console.error("API returned a success false response.");
+      }
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   const refreshData = () => {
     // Update the data here, for demonstration using random values
@@ -61,11 +120,11 @@ const Stats = () => {
         <View style={styles.refreshButton}>
         <Button title="Refresh Data" onPress={refreshData} />
       </View>
-      <View style={[styles.button, styles.buttonShadowBox1]}>
+      {/* <View style={[styles.button, styles.buttonShadowBox1]}>
         <View style={[styles.buttonChild, styles.buttonPosition]} />
         <Text style={[styles.getStarted, styles.getTypo1]}>Get Started</Text>
         <Text style={[styles.getStarted1, styles.getTypo1]}>Get Started</Text>
-      </View>
+      </View> */}
       <View style={styles.groupParent}>
         <View style={[styles.groupContainer, styles.groupPosition]}>
           <View style={[styles.groupWrapper, styles.groupWrapperPosition]}>
@@ -240,6 +299,15 @@ const Stats = () => {
         contentFit="cover"
         source={require("../assets/task.png")}
       />
+      <Pressable
+        style={({ pressed }) => [
+          styles.buttonContainer,
+          { backgroundColor: pressed ? "#0d1f11" : "#3A7D44" }, // Darken when pressed
+        ]}
+        onPress={handleGetStartedPress}
+      >
+        <Text style={styles.buttonText}>View Details</Text>
+      </Pressable>
     </View>
   );
 };
@@ -1388,6 +1456,23 @@ historyData: {
   width: '45%', 
   left: 105,
   position: "absolute",
+  },
+  buttonText: {
+    fontSize: 20,
+    fontFamily: "Poppins-Bold",
+    color: "#fff", 
+    fontWeight: "bold",
+    left: 20,
+    top: 5,
+  },
+  buttonContainer: {
+    backgroundColor: "#3A7D44", 
+    borderRadius: 30,
+    elevation: 3,
+    top: 570,
+    width: 150,
+    height: 40,
+    left: 113,
   },
 });
 
